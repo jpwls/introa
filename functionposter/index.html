@@ -1,0 +1,48 @@
+<script>
+
+    function distance(itemCost, moneySpent){
+        var value$ = 1
+        var valueQ = 0.25
+        var valueDi = 0.10
+        var valueN = 0.05
+        var valueP = 0.01
+
+        var change = moneySpent - itemCost;
+        var Dchange = Math.floor(change / value$);
+        change = change - (Dchange*value$);
+        console.log("Dollars : " + Dchange);
+        var Qchange = Math.floor(change / valueQ);
+         change = change - (Qchange*valueQ);
+        console.log("Quarters : " + Qchange);
+        var Dichange = Math.floor(change / valueDi);
+         change = change - (Dichange*valueDi);
+        console.log("Dime : " + Dichange)
+        var Nchange = Math.floor(change / valueN);
+         change = change - (Nchange*valueN);
+        console.log("Nickels : " + Nchange);
+         var Pchange = Math.round(change / valueP);
+         change = change - (Pchange*valueP);
+        console.log("Pennies : " + Pchange);
+       
+
+        
+        //1.70 / 1 = 1.70
+        //.70 / .25 = 2.8
+        //.20 / .1 = 2
+        //first: divide the value of change by the value of the coin or bill
+        //second the answer to #1 rounded down = # of coins or bills
+        //third substract the value of coins or bills from the change value to get the remaining change value
+        //do it again until your third step = 0;
+    }
+    
+    var prompt1 = prompt("How much the item costs?");
+    var prompt2 = prompt("How much you are spending?");
+    
+   
+                      
+   distance(prompt1, prompt2);
+
+   
+                      
+
+</script>
