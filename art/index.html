@@ -1,0 +1,57 @@
+<html>
+<head></head>
+<body>
+    <canvas id="myCanvas"width="500" height="600"></canvas>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+ 
+    
+    
+    ctx.shadowBlur=15;
+    ctx.shadowOffsetY=15;
+    ctx.shadowOffsetX=15
+    ctx.shadowColor="gray";
+    ctx.fillStyle="#F0F0F0";
+    ctx.fillRect(220,20,200,200);
+    
+    
+    
+    ctx.shadowBlur=30;
+    ctx.shadowOffsetX=-7;
+    ctx.shadowColor="gray";
+    ctx.fillStyle="#171717";
+    ctx.fillRect(20,50,200,100);
+    
+   
+    ctx.shadowBlur=30;
+    ctx.shadowOffsetX=-7;
+    ctx.shadowColor="gray";
+    ctx.fillStyle="#F0F0F0";
+    ctx.fillRect(20,150,200,100);
+    
+    
+    ctx.shadowBlur=30;
+    ctx.shadowOffsetX=-7
+    ctx.shadowColor="gray";
+    ctx.fillStyle="#171717";
+    ctx.fillRect(20,250,200,100);
+    
+    
+    ctx.shadowBlur=30;
+    ctx.shadowOffsetX=-7;
+    ctx.shadowColor="gray";
+    ctx.fillStyle="#F0F0F0";
+    ctx.fillRect(20,350,200,100);
+    
+    
+    ctx.shadowBlur=25;
+    ctx.shadowOffsetY=15;
+    ctx.shadowOffsetX=15;
+    ctx.shadowColor="gray";
+    ctx.fillStyle="#171717";
+    ctx.fillRect(220,280,200,200);
+                             
+</script>
+</body>
+</html>
