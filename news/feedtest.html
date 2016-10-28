@@ -1,0 +1,43 @@
+<html>
+<head>
+</head>
+<body>
+
+
+
+
+
+
+<script src="http://code.jquery.com/jquery-latest.min.js"
+        type="text/javascript"></script>
+<script type="text/javascript">
+//Here's a function to get RSS information
+//input parameter: url = url of the rss feed you want
+function getRSSFeed(url) {
+	var rssurl = encodeURIComponent(url);
+	var baseurl = "http://codeghs.com/scripts/rss.php?feedurl=" + rssurl;
+	$.ajax({
+		url: baseurl,
+		type: 'GET',
+		success: function(data){
+			generatePageContent($.parseJSON(data).item);
+		}
+
+	});
+}
+   //generate the page's content using pageData
+   //pageData is array from an RSS feed
+    function generatePageContent(pageData){
+        for(var i = 0; i < pageData.length; i++) {
+            var item = pageData[i];
+            var itemTitle = item.title;
+            var itemDescription = item.description;
+            var itemLink = item.link
+            $('body').append(itemTitle + itemDescription);
+            $('body').append('<a href="'+itemLink+'">Click here to read article.</a>');
+        }
+    }
+getRSSFeed("http://rss.cnn.com/rss/cnn_world.rss")
+
+</script>
+</body>
